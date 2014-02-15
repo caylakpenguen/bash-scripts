@@ -1,0 +1,4 @@
+bash-scrits
+===========
+
+Bash Betikleri

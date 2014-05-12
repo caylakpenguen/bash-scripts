@@ -1,0 +1,8 @@
+set smtp-use-starttls
+set nss-config-dir=~/.mozilla/firefox/z3mlc794.default/
+set ssl-verify=ignore
+set smtp=smtp://smtp.gmail.com:587
+set smtp-auth=login
+set smtp-auth-user=FalancaFilanca@gmail.com
+set smtp-auth-password=PAROLANIZI_YAZINIZ
+set from="$FROM_EMAIL_ADDRESS(Falanca Filanca)"

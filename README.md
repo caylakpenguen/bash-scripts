@@ -1,4 +1,4 @@
-bash-scrits
+bash-scripts
 ===========
 
 Bash Betikleri

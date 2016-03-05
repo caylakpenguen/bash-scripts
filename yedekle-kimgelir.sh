@@ -28,8 +28,9 @@ sleep 1
 }
 yedek(){
 # yedekleme islemi icin.
-mkdir -p backup.00
-touch backup.00
+cd $BCKDIR
+mkdir -p $BCKDIR/backup.00
+touch $BCKDIR/backup.00
 date > $BCKDIR/backup.00/$(date +%F-%H-%M).txt
 rsync -a --exclude=*.sock $DATADIR $BCKDIR/backup.00/
 }
@@ -51,7 +52,7 @@ Tarih: $DATE
 Kimgelir.com Yedekleme Servisi :-)
 EOF
 
-#
+# mail gonderim kismi.
 mail -s "yedek islemi" info@kimgelir.com < $BCKDIR/mesaj.txt
 rm -f $BCKDIR/mesaj.txt
 date >>$BCKDIR/tarih.txt

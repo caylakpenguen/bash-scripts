@@ -39,17 +39,17 @@ eposta(){
 # bilgilendirmek icin :-)
 cat > $BCKDIR/mesaj.txt <<EOF
 
-Merhaba Patron.
+ Merhaba Patron.
 
-Yedekleme islemi tamamlanmistir.
+ $(date +%F) tarihli yedekleme islemi tamamlanmistir.
 
 
-Bilgilerinize arz ederim.
+ Bilgilerinize arz ederiz.
 
-Yedek Dizini = $BCKDIR 
-Tarih: $DATE
+ Yedek Dizini = $BCKDIR 
+ Tarih: $(date)
 
-Kimgelir.com Yedekleme Servisi :-)
+ Kimgelir.com Yedekleme Servisi :-)
 EOF
 
 # mail gonderim kismi.

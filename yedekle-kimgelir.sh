@@ -14,25 +14,26 @@ cd $BCKDIR
 
 dondur(){
 # en eski yedek silinsin.
-rm -rf $BCKDIR/backup.08.delete
+	rm -rf $BCKDIR/backup.08.delete
 # Once yedek dizinleri Dondurelim.
-mv -f $BCKDIR/backup.07 $BCKDIR/backup.08.delete
-mv -f $BCKDIR/backup.06 $BCKDIR/backup.07
-mv -f $BCKDIR/backup.05 $BCKDIR/backup.06
-mv -f $BCKDIR/backup.04 $BCKDIR/backup.05
-mv -f $BCKDIR/backup.03 $BCKDIR/backup.04
-mv -f $BCKDIR/backup.02 $BCKDIR/backup.03
-mv -f $BCKDIR/backup.01 $BCKDIR/backup.02
-mv -f $BCKDIR/backup.00 $BCKDIR/backup.01
+	mv -f $BCKDIR/backup.07 $BCKDIR/backup.08.delete
+	mv -f $BCKDIR/backup.06 $BCKDIR/backup.07
+	mv -f $BCKDIR/backup.05 $BCKDIR/backup.06
+	mv -f $BCKDIR/backup.04 $BCKDIR/backup.05
+	mv -f $BCKDIR/backup.03 $BCKDIR/backup.04
+	mv -f $BCKDIR/backup.02 $BCKDIR/backup.03
+	mv -f $BCKDIR/backup.01 $BCKDIR/backup.02
+	mv -f $BCKDIR/backup.00 $BCKDIR/backup.01
 sleep 1
 }
+
 yedek(){
 # yedekleme islemi icin.
-cd $BCKDIR
-mkdir -p $BCKDIR/backup.00
-touch $BCKDIR/backup.00
-date > $BCKDIR/backup.00/$(date +%F-%H-%M).txt
-rsync -a --exclude=*.sock $DATADIR $BCKDIR/backup.00/
+	cd $BCKDIR
+	mkdir -p backup.00
+	touch backup.00
+	date > $BCKDIR/backup.00/$(date +%F-%H-%M).txt
+	rsync -a --exclude=*.sock $DATADIR $BCKDIR/backup.00/
 }
 
 eposta(){

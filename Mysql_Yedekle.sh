@@ -2,9 +2,11 @@
 # caylakpenguen http://www.truvalinux.org.tr
 # mysql Datalarini yedekleme icin betik 14 Mayis 2016
 #
+
+# dizinleri olusturmak icin.
+# for i in backup.{00..30}; do mkdir $i; done
+
 BCKDIR=/root/MySQL_Yedek
-DIZIN=$(date +%F)
-cd $DATA
 
 yedekal(){
 cd $BCKDIR/backup.00

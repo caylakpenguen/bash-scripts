@@ -74,6 +74,6 @@ echo " Merhaba Parton
 $(date) tarihli MySQL yedekleme islemi tamamlandi.
 iyi calismalar dileriz.
 " >$BCKDIR/bilgi.txt
-mail -v -s "Yedekleme" info@kimgelir.com <$BCKDIR/bilgi.txt
+mail -s "Mysql Yedekleme" info@kimgelir.com <$BCKDIR/bilgi.txt
 
 

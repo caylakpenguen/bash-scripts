@@ -14,8 +14,8 @@ for i in `cat $BCKDIR/liste.txt`
 do
 #echo " Yedek Alinan Db =>> $i"
 mysqldump -uroot $i >$i.sql
-gzip -9 *.sql >/dev/null
 done
+gzip -9 *.sql >/dev/null
 }
 
 dondur(){

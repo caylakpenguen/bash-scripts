@@ -1,6 +1,6 @@
 #!/bin/bash
 # caylakpenguen http://www.truvalinux.org.tr
-# mysql Datalarini yedekleme icin betik 14 Mayis 2016
+# mysql Datalarini yedekleme icin betik 14 Mayis 2016 Cumartesi
 #
 
 # dizinleri olusturmak icin.

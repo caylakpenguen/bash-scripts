@@ -69,11 +69,13 @@ yedek(){
 yedek
 
 
-# mail kismi
-echo " Merhaba Parton
-$(date) tarihli MySQL yedekleme islemi tamamlandi.
+# mail gonderme kismi
+echo " Merhaba Patron
+$(date +%F) tarihli MySQL yedekleme islemi tamamlandi.
 iyi calismalar dileriz.
+Tarih: $(date)
 " >$BCKDIR/bilgi.txt
+
 mail -s "Mysql Yedekleme" info@kimgelir.com <$BCKDIR/bilgi.txt
 
 

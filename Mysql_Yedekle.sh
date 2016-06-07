@@ -7,22 +7,23 @@
 # for i in backup.{00..30}; do mkdir $i; done
 
 BCKDIR=/root/MySQL_Yedek
-
+DIZIN=$(date +%F)
 yedekal(){
 cd $BCKDIR/backup.00
+mkdir $DIZIN
 for i in `cat $BCKDIR/liste.txt`
 do
 #echo " Yedek Alinan Db =>> $i"
-mysqldump -uroot $i >$i.sql
+mysqldump -uroot $i >$DIZIN/$i.sql
 done
-gzip -9 *.sql >/dev/null
+gzip -9 $DIZIN/*.sql >/dev/null
 }
 
 dondur(){
 # en eski yedek silinsin.
-	rm -rf $BCKDIR/backup.delete
+	rm -rf $BCKDIR/backup.31
 # Once yedek dizinleri Dondurelim.
-        mv -f $BCKDIR/backup.30 $BCKDIR/backup.delete
+        mv -f $BCKDIR/backup.30 $BCKDIR/backup.31
         mv -f $BCKDIR/backup.29 $BCKDIR/backup.30
         mv -f $BCKDIR/backup.28 $BCKDIR/backup.29
         mv -f $BCKDIR/backup.27 $BCKDIR/backup.28

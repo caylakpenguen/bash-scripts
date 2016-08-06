@@ -57,10 +57,16 @@ dondur(){
 sleep 1
 }
 
+# Mysql Dblerini listele.
+listele(){
+find /var/lib/mysql/ -type d | cut -d. -f1 | cut -d/ -f5 | sort | grep -v "mysql" >$BCKDIR/liste.txt
+cp $BCKDIR/liste.txt $BCKDIR/liste`date +%F`.txt
+}
 yedek(){
 # yedekleme islemi icin.
 	dondur
 	cd $BCKDIR
+	listele
 	mkdir -p backup.00
 	touch backup.00
 	date > $BCKDIR/backup.00/$(date +%F-%H-%M).txt
@@ -75,8 +81,11 @@ echo " Merhaba Patron
 $(date +%F) tarihli MySQL yedekleme islemi tamamlandi.
 iyi calismalar dileriz.
 Tarih: $(date)
++--------------+
+DB listesi
++--------------+
 " >$BCKDIR/bilgi.txt
-
+cat $BCKDIR/liste.txt >>$BCKDIR/bilgi.txt
 mail -s "Mysql Yedekleme" info@kimgelir.com <$BCKDIR/bilgi.txt
 
 

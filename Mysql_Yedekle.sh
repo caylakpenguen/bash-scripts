@@ -86,6 +86,6 @@ DB listesi
 +--------------+
 " >$BCKDIR/bilgi.txt
 cat $BCKDIR/liste.txt >>$BCKDIR/bilgi.txt
-mail -s "Mysql Yedekleme" info@kimgelir.com <$BCKDIR/bilgi.txt
+mail -s "Mysql Yedekleme" info@FalancaFilanca.com <$BCKDIR/bilgi.txt
 
 

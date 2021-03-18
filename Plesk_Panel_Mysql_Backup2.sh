@@ -1,6 +1,7 @@
 #!/bin/bash
 # caylakpenguen - 20 Aralik 2020 - 19:14
 # edit = Prs 14 Oca 2021 21:46:15 +03 
+# edit = Cum 19 Mar 2021 00:13:21 +03 
 # Plesk-Panel icin Mysql db yedekleme servisi :)
 #
 # her saat basi yedek almak icin. 
@@ -16,8 +17,8 @@ CMD="$MYSQL_PWD $DUMPCMD $OPSIYON"
 
 
 #Yedek-Al
-$CMD FORUMDB | gzip -9 > /root/Backup/FORUMDB.sql.gz
-$CMD RESIMDB | gzip -9 > /root/Backup/RESIMDB.sql.gz
-$CMD DOSYADB | gzip -9 > /root/Backup/DOSYADB.sql.gz
+$CMD FORUMDB | gzip -9 > /root/Backup/$DATE.FORUMDB.sql.gz
+$CMD RESIMDB | gzip -9 > /root/Backup/$DATE.RESIMDB.sql.gz
+$CMD DOSYADB | gzip -9 > /root/Backup/$DATE.DOSYADB.sql.gz
 #-------
 #bittiiii :)
